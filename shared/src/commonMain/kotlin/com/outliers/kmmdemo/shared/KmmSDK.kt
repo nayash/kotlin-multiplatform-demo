@@ -5,7 +5,7 @@ import com.outliers.kmmdemo.shared.cache.DatabaseDriverFactory
 import com.outliers.kmmdemo.shared.cache.Note
 
 class KmmSDK(dbDriverFactory: DatabaseDriverFactory) {
-    private val database = Database(dbDriverFactory)
+    private val database: Database = Database(dbDriverFactory)
 
     fun getAllNotes(): List<Note> {
         return database.getAllNotes()
@@ -17,5 +17,9 @@ class KmmSDK(dbDriverFactory: DatabaseDriverFactory) {
 
     fun insertNote(title: String, body: String?) {
         database.insertNote(title, body)
+    }
+
+    fun deleteAll() {
+        database.deleteAll()
     }
 }

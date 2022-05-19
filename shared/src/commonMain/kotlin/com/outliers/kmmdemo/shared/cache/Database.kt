@@ -1,6 +1,6 @@
 package com.outliers.kmmdemo.shared.cache
 
-internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
+class Database(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = KmmDemoDB(databaseDriverFactory.createDriver())
     private val dbQuery = database.kmmDemoDBQueries
 
@@ -14,5 +14,9 @@ internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
 
     internal fun insertNote(title: String, body: String?) {
         return dbQuery.insertNote(title, body)
+    }
+
+    internal fun deleteAll() {
+        return dbQuery.deleteAll()
     }
 }

@@ -13,3 +13,6 @@ SELECT * FROM Note;
 
 selectLastNote:
 SELECT * FROM Note ORDER BY id DESC LIMIT 1;
+
+deleteAll:
+DELETE FROM Note;
