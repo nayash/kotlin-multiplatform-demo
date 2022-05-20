@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    kotlin("plugin.serialization")
+    // kotlin("plugin.serialization")
     id("com.squareup.sqldelight")
 }
 
@@ -18,18 +18,18 @@ kotlin {
         }
     }
 
-    val coroutinesVersion = "1.6.1"
-    val serializationVersion = "1.2.2"
-    val ktorVersion = "1.6.1"
+    // val coroutinesVersion = "1.6.1"
+    // val serializationVersion = "1.2.2"
+    // val ktorVersion = "1.6.1"
     val sqlDelightVersion: String by project
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
-                implementation("io.ktor:ktor-client-core:$ktorVersion")
-                implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                // implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
+                // implementation("io.ktor:ktor-client-core:$ktorVersion")
+                // implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
             }
         }
@@ -40,7 +40,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
+                // implementation("io.ktor:ktor-client-android:$ktorVersion")
                 implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
             }
         }
@@ -54,7 +54,7 @@ kotlin {
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
-                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                // implementation("io.ktor:ktor-client-ios:$ktorVersion")
                 implementation("com.squareup.sqldelight:native-driver:$sqlDelightVersion")
             }
         }
